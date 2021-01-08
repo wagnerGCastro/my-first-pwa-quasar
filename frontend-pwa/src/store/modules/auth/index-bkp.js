@@ -1,5 +1,4 @@
-import { setAxiosBearerToken } from 'boot/axios'
-import * as service from '@services/request/auth'
+import { axiosInstance as axios, setAxiosBearerToken } from 'boot/axios'
 import { storageService as storage } from '@services/storage'
 
 /* eslint-disable */
@@ -35,7 +34,7 @@ export const auth = {
       return new Promise(async(resolve, reject) => {
         try {
           setAxiosBearerToken(token)
-          const { data: { message } } = await service.getUserInfo()
+          const { data: { message } } = await axios.get('/auth/me')
           // console.log(message)
           dispatch('actionSetUser', message)
           dispatch('actionSetToken', token)
@@ -50,7 +49,10 @@ export const auth = {
     },
 
     actionDoLogin: ({ dispatch }, payload) => {
-      return service.login(payload.userName, payload.userPassword).then(resp => {
+      return axios.post('/auth/login', {
+        email: payload.userName,
+        password: payload.userPassword
+      }).then(resp => {
         // console.log(resp)
         dispatch('actionSetExpires', resp.data.expires_in)
         dispatch('actionSetToken', resp.data.access_token)
