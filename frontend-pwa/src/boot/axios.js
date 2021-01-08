@@ -2,7 +2,8 @@ import Vue from 'vue'
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-  baseURL: 'http://127.0.0.1:8021/api'
+  baseURL: 'http://127.0.0.1:8021/api',
+  timeout: 20000
 })
 
 // Set Bearer token header
