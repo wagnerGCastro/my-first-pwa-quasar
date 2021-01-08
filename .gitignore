@@ -1,0 +1,43 @@
+# Add any directories, files, or patterns you don't want to be tracked by version control
+#ignorar arquivos do vscode
+.vscode/*
+!.vscode/.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+\.idea/*
+
+.DS_Store
+.thumbs.db
+node_modules
+
+# Quasar core related directories
+.quasar
+/dist
+
+# Cordova related directories and files
+/src-cordova/node_modules
+/src-cordova/platforms
+/src-cordova/plugins
+/src-cordova/www
+
+# Capacitor related directories and files
+/src-capacitor/www
+/src-capacitor/node_modules
+
+# BEX related directories and files
+/src-bex/www
+/src-bex/js/core
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln

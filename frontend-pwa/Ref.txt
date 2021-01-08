@@ -1,0 +1,8 @@
+-- Login form
+  https://dev.to/quasar-pt-br/qpanc-parte-15-quasar-login-jc6
+
+-- Component: Form
+  https://quasar.dev/vue-components/form
+  
+  # Validatte form
+  https://v0-15.quasar-framework.org/components/form-validation.html
